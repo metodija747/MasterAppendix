@@ -1,0 +1,150 @@
+{
+  "config": {
+    "target": "http://aab41680e5ab6450a865b0e379cfdc1e-1e4ec05c9e5145f4.elb.us-east-1.amazonaws.com",
+    "timeout": 100000,
+    "phases": [
+      {
+        "duration": 10,
+        "arrivalRate": 4
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 4
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 9
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 8
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 4
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 4
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 6
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 1
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 10
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 4
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 4
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 4
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 3
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 2
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 6
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 7
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 9
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 5
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 7
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 1
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 4
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 3
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 9
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 5
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 10
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 9
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 1
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 9
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 1
+      },
+      {
+        "duration": 10,
+        "arrivalRate": 3
+      }
+    ],
+    "processor": "./processor.js"
+  },
+  "scenarios": [
+    {
+      "flow": [
+        {
+          "get": {
+            "url": "/products"
+          }
+        },
+        {
+          "get": {
+            "url": "/products/123"
+          }
+        },
+        {
+          "get": {
+            "url": "/comments/123"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+config:
+  target: 'http://aab41680e5ab6450a865b0e379cfdc1e-1e4ec05c9e5145f4.elb.us-east-1.amazonaws.com'
+  phases:
+    - duration: 300
+      arrivalRate: 5
+      name: "Constant arrival 5 each second"
+  timeout: 6000
+
+scenarios:
+  - flow:
+      - get:
+          url: '/products'
+      - get:
+          url: '/products/123'
+      - get:
+          url: '/comments/123'

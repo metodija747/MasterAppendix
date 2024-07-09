@@ -1,0 +1,29 @@
+config:
+  target: 'http://aab41680e5ab6450a865b0e379cfdc1e-1e4ec05c9e5145f4.elb.us-east-1.amazonaws.com'
+  phases:
+    - duration: 60
+      arrivalRate: 2
+      name: "Warmup - 2 users"
+    - duration: 60
+      arrivalRate: 4
+      name: "Increase load - 4 users"
+    - duration: 60
+      arrivalRate: 6
+      name: "Increased load - 6 users"
+    - duration: 60
+      arrivalRate: 8
+      name: "Increased load - 8 users"
+    - duration: 60
+      arrivalRate: 10
+      name: "Peak load - 10 users"
+  timeout: 100000
+
+
+scenarios:
+  - flow:
+      - get:
+          url: '/products'
+      - get:
+          url: '/products/123'
+      - get:
+          url: '/comments/123'

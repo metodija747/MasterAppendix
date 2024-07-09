@@ -1,0 +1,22 @@
+config:
+  target: 'http://aab41680e5ab6450a865b0e379cfdc1e-1e4ec05c9e5145f4.elb.us-east-1.amazonaws.com'
+  phases:
+    - duration: 150
+      arrivalRate: 0
+      rampTo: 15
+      name: "Ramping up to peak"
+    - duration: 150  
+      arrivalRate: 15
+      rampTo: 0
+      name: "Ramping down to 0"
+  timeout: 100000
+
+
+scenarios:
+  - flow:
+      - get:
+          url: '/products'
+      - get:
+          url: '/products/123'
+      - get:
+          url: '/comments/123'
